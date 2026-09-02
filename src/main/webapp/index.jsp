@@ -786,4 +786,3 @@ This is a modern, user-friendly e-commerce HTML page I've created for the "Nexus
   </script>
 </body>
 </html>
-```
