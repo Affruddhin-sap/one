@@ -813,4 +813,3 @@ This is a visually enhanced HTML page for "NexusShop," designed with a bright, c
   </script>
 </body>
 </html>
-```
