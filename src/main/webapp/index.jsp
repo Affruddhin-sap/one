@@ -1,32 +1,34 @@
+This is a visually enhanced HTML page for "NexusShop," designed with a bright, clean, and highly visible user interface. It uses a clear color palette, spacious layouts, and modern card styles to make browsing and shopping intuitive.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
-  <title>NexusShop · Modern E‑Commerce</title>
+  <title>NexusShop · bright & visible</title>
 
-  <!-- Fonts & Icons (friendly, fast) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
   <style>
-    /* ===== ROOT ===== */
+    /* reset & base – high contrast, clear spacing */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #fafcff;
-      --primary: #0b2b44;
-      --accent: #00b8d4;
-      --accent-light: #e1f5fe;
-      --muted: #5f6c80;
-      --card: #ffffff;
-      --surface: #f2f6fb;
-      --success: #2e7d32;
-      --radius: 16px;
-      --shadow-sm: 0 6px 18px rgba(0, 20, 40, 0.04);
-      --shadow-hover: 0 16px 36px rgba(0, 30, 50, 0.08);
+      --bg: #f5f9ff;
+      --surface: #ffffff;
+      --primary: #002642;
+      --accent: #0088cc;
+      --accent-light: #d4edff;
+      --muted: #3e5a70;
+      --border-light: #dce7f2;
+      --shadow: 0 8px 24px rgba(0, 30, 60, 0.06);
+      --shadow-hover: 0 18px 40px rgba(0, 40, 80, 0.10);
+      --radius: 20px;
+      --radius-sm: 12px;
       --transition: 0.2s ease;
-      --container: 1240px;
+      --container: 1280px;
     }
 
     html { scroll-behavior: smooth; }
@@ -40,23 +42,23 @@
 
     a { color: inherit; text-decoration: none; }
     button { cursor: pointer; border: none; background: none; font-family: inherit; }
-    img { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; height: auto; }
 
     .container {
       max-width: var(--container);
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
-    /* ===== HEADER (friendly & sticky) ===== */
+    /* ===== HEADER – clean, sticky, visible ===== */
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 20, 40, 0.04);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 38, 66, 0.06);
       box-shadow: 0 2px 12px rgba(0,0,0,0.02);
     }
 
@@ -66,7 +68,7 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      padding: 10px 0;
+      padding: 12px 0;
     }
 
     .brand {
@@ -75,8 +77,9 @@
       gap: 6px;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: -0.3px;
+      font-size: 1.7rem;
+      letter-spacing: -0.4px;
+      color: var(--primary);
     }
     .brand .accent { color: var(--accent); }
 
@@ -84,92 +87,98 @@
     .main-nav ul {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       list-style: none;
+      flex-wrap: wrap;
     }
     .main-nav li a {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
-      border-radius: 40px;
-      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 60px;
+      font-weight: 600;
       color: var(--primary);
+      background: transparent;
       transition: background var(--transition), color var(--transition);
+      font-size: 0.95rem;
     }
+    .main-nav li a i { font-size: 1rem; opacity: 0.8; }
     .main-nav li a:hover {
       background: var(--accent-light);
-      color: #005b7a;
+      color: #005a88;
     }
-    .main-nav li a i { font-size: 0.95rem; }
 
-    /* search */
+    /* search – prominent */
     .search-wrapper {
       display: flex;
       align-items: center;
       background: white;
-      border: 1px solid #e2eaf2;
+      border: 2px solid #d4e2f0;
       border-radius: 60px;
-      padding: 0 6px 0 18px;
-      transition: box-shadow 0.2s;
+      padding: 0 4px 0 20px;
+      transition: 0.15s;
       min-width: 200px;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(0, 20, 40, 0.02);
     }
     .search-wrapper:focus-within {
-      box-shadow: 0 0 0 3px rgba(0, 184, 212, 0.25);
       border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(0, 136, 204, 0.15);
     }
     .search-wrapper input {
       border: none;
       background: transparent;
-      padding: 10px 4px;
-      font-size: 0.9rem;
+      padding: 12px 4px;
+      font-size: 0.95rem;
       width: 100%;
       outline: none;
     }
     .search-wrapper button {
       background: var(--accent);
       color: white;
-      border-radius: 40px;
-      padding: 8px 14px;
-      font-size: 0.95rem;
+      border-radius: 60px;
+      padding: 10px 18px;
+      font-weight: 600;
       transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .search-wrapper button:hover { background: #0097b0; }
+    .search-wrapper button:hover { background: #006fa8; }
 
-    /* header actions */
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
     .icon-btn {
       color: var(--primary);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       transition: color 0.2s, transform 0.1s;
       padding: 6px;
       border-radius: 40px;
     }
-    .icon-btn:hover { color: var(--accent); transform: scale(1.03); }
+    .icon-btn:hover { color: var(--accent); transform: scale(1.04); }
 
     .cart {
       position: relative;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 10px 6px 6px;
-      border-radius: 40px;
-      background: var(--surface);
+      padding: 6px 14px 6px 10px;
+      border-radius: 60px;
+      background: var(--accent-light);
+      font-weight: 600;
       transition: background 0.2s;
     }
-    .cart:hover { background: #e4ecf5; }
+    .cart:hover { background: #c2e2ff; }
     .cart-count {
       background: var(--accent);
-      color: #fff;
+      color: white;
       font-weight: 700;
-      font-size: 0.7rem;
-      width: 20px;
-      height: 20px;
+      font-size: 0.75rem;
+      width: 22px;
+      height: 22px;
       border-radius: 40px;
       display: inline-grid;
       place-items: center;
@@ -178,153 +187,159 @@
 
     .mobile-toggle {
       display: none;
-      font-size: 1.5rem;
-      padding: 6px 8px;
+      font-size: 1.6rem;
+      padding: 6px 14px;
       background: var(--surface);
-      border-radius: 40px;
+      border-radius: 60px;
+      box-shadow: var(--shadow);
     }
 
-    /* ===== HERO (warmer) ===== */
+    /* ===== HERO – bold & visible ===== */
     .hero {
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(145deg, #0b2b44 0%, #1a405a 100%);
+      background: linear-gradient(145deg, #002642 0%, #1a4b6a 100%);
       color: white;
       min-height: 380px;
-      padding: 50px 20px;
-      border-radius: 0 0 40px 40px;
-      margin: 0 12px 12px;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+      padding: 52px 20px;
+      border-radius: 0 0 48px 48px;
+      margin: 0 12px 20px;
+      box-shadow: 0 12px 30px rgba(0, 20, 40, 0.2);
     }
     .hero h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: 2.8rem;
+      font-size: 3rem;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .hero p {
-      opacity: 0.9;
+      opacity: 0.95;
       max-width: 660px;
       margin: 0 auto 24px;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
     }
-    .btn-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 12px 28px;
+      padding: 14px 34px;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.2s;
       border: none;
+      font-size: 1rem;
     }
     .btn-primary {
-      background: var(--accent);
-      color: #001f2b;
-      box-shadow: 0 6px 14px rgba(0, 184, 212, 0.3);
+      background: #00a3d6;
+      color: #001b2b;
+      box-shadow: 0 8px 20px rgba(0, 163, 214, 0.3);
     }
-    .btn-primary:hover { background: #00c8e6; transform: scale(1.02); box-shadow: 0 8px 20px rgba(0, 184, 212, 0.4); }
+    .btn-primary:hover { background: #00b8f0; transform: scale(1.02); box-shadow: 0 12px 28px rgba(0, 163, 214, 0.4); }
     .btn-ghost {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.10);
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 2px solid rgba(255,255,255,0.25);
       color: white;
     }
-    .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.20); }
 
     /* ===== SECTIONS ===== */
-    .section { padding: 40px 0; }
+    .section { padding: 48px 0; }
     .section-title {
       text-align: center;
       font-family: 'Poppins', sans-serif;
-      font-size: 1.9rem;
+      font-size: 2.2rem;
       letter-spacing: -0.3px;
     }
     .section-sub {
       text-align: center;
       color: var(--muted);
-      margin: 6px 0 24px;
+      margin: 4px 0 28px;
+      font-size: 1.05rem;
     }
 
-    /* categories grid */
+    /* categories */
     .categories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
     }
     .cat-card {
-      background: var(--card);
+      background: var(--surface);
       border-radius: var(--radius);
-      padding: 22px 10px;
+      padding: 24px 12px;
       text-align: center;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow);
+      border: 1px solid white;
       transition: transform var(--transition), box-shadow var(--transition);
-      border: 1px solid rgba(0,0,0,0.02);
     }
     .cat-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-hover);
-      background: white;
+      border-color: var(--accent-light);
     }
     .cat-card .icon {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       color: var(--accent);
       margin-bottom: 6px;
     }
-    .cat-card h4 { font-weight: 600; font-size: 1rem; }
+    .cat-card h4 { font-weight: 600; font-size: 1.05rem; }
 
     /* products */
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 28px;
     }
     .product {
-      background: var(--card);
+      background: var(--surface);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow);
       transition: transform var(--transition), box-shadow var(--transition);
       display: flex;
       flex-direction: column;
-      border: 1px solid #f0f4fa;
+      border: 1px solid rgba(255,255,255,0.7);
     }
     .product:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
     }
     .product img {
-      height: 180px;
+      height: 200px;
       width: 100%;
       object-fit: cover;
-      background: #f4f8fe;
+      background: #eef4fa;
     }
     .product-body {
-      padding: 14px 16px 8px;
+      padding: 16px 18px 6px;
       flex: 1;
     }
     .product-body h5 {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 4px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 2px;
     }
     .product-category {
       font-size: 0.8rem;
       color: var(--muted);
       text-transform: capitalize;
+      letter-spacing: 0.3px;
     }
     .price-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
     }
-    .price-current { font-weight: 700; font-size: 1.2rem; }
+    .price-current { font-weight: 700; font-size: 1.3rem; color: var(--primary); }
     .price-old {
-      color: var(--muted);
+      color: #7a8a9e;
       text-decoration: line-through;
       font-size: 0.9rem;
       margin-left: 6px;
@@ -332,148 +347,163 @@
     .rating {
       color: #f5b342;
       font-size: 0.9rem;
+      background: #fef6e0;
+      padding: 2px 10px;
+      border-radius: 40px;
     }
     .product-footer {
-      padding: 8px 16px 16px;
+      padding: 12px 18px 18px;
       display: flex;
-      gap: 10px;
+      gap: 12px;
     }
     .add-btn {
       flex: 1;
       background: var(--primary);
       color: white;
-      padding: 10px;
-      border-radius: 40px;
-      font-weight: 600;
+      padding: 12px 6px;
+      border-radius: 60px;
+      font-weight: 700;
       transition: background 0.2s;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
+      font-size: 0.95rem;
     }
-    .add-btn:hover { background: #1a405a; }
+    .add-btn:hover { background: #004466; }
     .wish-btn {
-      background: var(--surface);
-      border-radius: 40px;
-      padding: 8px 14px;
+      background: var(--bg);
+      border-radius: 60px;
+      padding: 8px 16px;
       transition: background 0.2s;
+      font-size: 1.1rem;
     }
-    .wish-btn:hover { background: #e1eaf2; }
+    .wish-btn:hover { background: #dce7f2; }
 
     /* deal card */
     .deal-card {
       display: flex;
       flex-wrap: wrap;
-      background: white;
+      background: var(--surface);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid #eef4fa;
+      box-shadow: var(--shadow);
+      border: 1px solid white;
     }
     .deal-card .deal-img {
-      flex: 1 1 300px;
-      min-height: 240px;
-      background: #e3ecf5;
+      flex: 1 1 280px;
+      min-height: 220px;
+      background: #dcebfa;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 5rem;
-      color: #0b2b44;
+      color: var(--primary);
     }
     .deal-card .deal-body {
-      flex: 2 1 340px;
-      padding: 28px 32px;
+      flex: 2 1 360px;
+      padding: 32px 36px;
     }
-    .deal-body h3 { font-family: 'Poppins', sans-serif; font-size: 1.7rem; }
+    .deal-body h3 { font-family: 'Poppins', sans-serif; font-size: 2rem; }
     .timer {
       display: flex;
-      gap: 12px;
-      margin: 16px 0;
+      gap: 14px;
+      margin: 18px 0;
+      flex-wrap: wrap;
     }
     .time-box {
       background: var(--primary);
       color: white;
-      padding: 8px 14px;
-      border-radius: 12px;
-      min-width: 60px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      min-width: 68px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .time-box span { font-size: 1.6rem; font-weight: 600; display: block; }
+    .time-box span { font-size: 1.8rem; font-weight: 700; display: block; line-height: 1.2; }
 
     /* testimonials */
     .testimonials-scroll {
       display: flex;
-      gap: 18px;
+      gap: 20px;
       overflow-x: auto;
-      padding: 10px 4px 20px;
+      padding: 8px 4px 24px;
       scroll-snap-type: x mandatory;
     }
     .testimonial {
       min-width: 280px;
-      background: white;
-      padding: 20px;
+      background: var(--surface);
+      padding: 24px;
       border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow);
       scroll-snap-align: start;
-      border: 1px solid #f0f4fa;
+      border: 1px solid white;
     }
+    .testimonial .rating { background: transparent; padding: 0; }
 
-    /* newsletter */
+    /* newsletter – high vis */
     .newsletter-box {
       background: var(--primary);
       color: white;
       border-radius: var(--radius);
-      padding: 40px 20px;
+      padding: 48px 24px;
       text-align: center;
+      box-shadow: 0 8px 28px rgba(0, 38, 66, 0.15);
     }
     .newsletter-box input {
-      padding: 12px 20px;
+      padding: 14px 24px;
       border-radius: 60px;
       border: none;
-      width: 280px;
+      width: 300px;
       max-width: 100%;
-      margin-right: 6px;
-      font-size: 0.95rem;
+      margin-right: 8px;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
     .newsletter-box .btn-primary {
-      background: var(--accent);
-      color: #001f2b;
+      background: #00a3d6;
+      color: #001b2b;
+      padding: 14px 32px;
     }
+    .newsletter-box .btn-primary:hover { background: #00b8f0; }
 
     /* footer */
     footer {
-      margin-top: 30px;
-      padding: 28px 0;
-      border-top: 1px solid #eaf0f6;
+      margin-top: 32px;
+      padding: 32px 0;
+      border-top: 2px solid #dce7f2;
       color: var(--muted);
+      background: white;
     }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 2.5rem; }
+    }
+    @media (max-width: 860px) {
       .main-nav { display: none; }
       .mobile-toggle { display: inline-flex; }
-      .search-wrapper { min-width: 140px; }
-      .hero h1 { font-size: 2.2rem; }
+      .search-wrapper { min-width: 150px; }
     }
     @media (max-width: 640px) {
       .header-inner { flex-wrap: wrap; }
       .search-wrapper { order: 3; flex: 1 1 100%; margin-top: 4px; }
-      .hero { min-height: 280px; border-radius: 0 0 24px 24px; }
-      .hero h1 { font-size: 1.8rem; }
-      .products-grid { grid-template-columns: 1fr 1fr; }
+      .hero { min-height: 280px; border-radius: 0 0 28px 28px; margin: 0 6px 12px; }
+      .hero h1 { font-size: 2rem; }
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
       .deal-card .deal-body { padding: 20px; }
+      .categories-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 440px) {
       .products-grid { grid-template-columns: 1fr; }
-      .categories-grid { grid-template-columns: 1fr 1fr; }
-      .timer { flex-wrap: wrap; }
+      .timer { gap: 8px; }
+      .time-box { min-width: 56px; padding: 6px 10px; }
+      .time-box span { font-size: 1.4rem; }
     }
 
-    /* utilities */
     .muted { color: var(--muted); }
-    .mt-12 { margin-top: 12px; }
-    .gap-8 { gap: 8px; }
     .flex { display: flex; align-items: center; }
+    .gap-8 { gap: 8px; }
   </style>
 </head>
 <body>
@@ -493,14 +523,14 @@
         </ul>
       </nav>
 
-      <div class="flex" style="gap:12px;">
+      <div class="flex" style="gap:12px; flex-wrap:wrap;">
         <div class="search-wrapper" role="search">
-          <input type="search" id="searchInput" placeholder="Search..." aria-label="Search" />
-          <button id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+          <input type="search" id="searchInput" placeholder="Search products…" aria-label="Search" />
+          <button id="searchBtn"><i class="fas fa-search"></i> Search</button>
         </div>
 
         <div class="header-actions">
-          <a class="icon-btn" href="#" aria-label="Account"><i class="far fa-user"></i></a>
+          <a class="icon-btn" href="#" aria-label="Account"><i class="far fa-user-circle"></i></a>
           <a class="icon-btn" href="#" aria-label="Wishlist"><i class="far fa-heart"></i></a>
           <a class="cart" href="#" id="cartBtn" aria-label="Cart">
             <i class="fas fa-shopping-cart"></i>
@@ -511,13 +541,13 @@
     </div>
 
     <!-- mobile menu -->
-    <div id="mobileMenu" style="display:none; background:white; border-top:1px solid #eaf0f6; padding:8px 0;">
+    <div id="mobileMenu" style="display:none; background:white; border-top:2px solid #eaf0f6; padding:12px 0;">
       <div class="container">
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:6px;">
-          <li><a href="#" style="padding:8px 12px; border-radius:8px;">Home</a></li>
-          <li><a href="#categories" style="padding:8px 12px; border-radius:8px;">Categories</a></li>
-          <li><a href="#products" style="padding:8px 12px; border-radius:8px;">Trending</a></li>
-          <li><a href="#deals" style="padding:8px 12px; border-radius:8px;">Deals</a></li>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+          <li><a href="#" style="padding:12px 16px; border-radius:12px; font-weight:600;">Home</a></li>
+          <li><a href="#categories" style="padding:12px 16px; border-radius:12px; font-weight:600;">Categories</a></li>
+          <li><a href="#products" style="padding:12px 16px; border-radius:12px; font-weight:600;">Trending</a></li>
+          <li><a href="#deals" style="padding:12px 16px; border-radius:12px; font-weight:600;">Deals</a></li>
         </ul>
       </div>
     </div>
@@ -528,7 +558,7 @@
     <section class="hero" aria-label="Hero">
       <div class="container">
         <h1>New Winter Collection</h1>
-        <p>Premium picks in fashion, tech &amp; accessories. Free shipping on first order.</p>
+        <p>Premium fashion, tech &amp; accessories — free shipping on first order.</p>
         <div class="btn-group">
           <button class="btn btn-primary" id="shopNow"><i class="fas fa-arrow-right"></i> Shop Now</button>
           <button class="btn btn-ghost" id="exploreDeals">Explore Deals</button>
@@ -539,7 +569,7 @@
     <!-- CATEGORIES -->
     <section class="section container" id="categories">
       <h2 class="section-title">Shop by Category</h2>
-      <p class="section-sub">Explore curated collections</p>
+      <p class="section-sub">Browse curated collections</p>
       <div class="categories-grid" id="categoriesGrid"></div>
     </section>
 
@@ -558,18 +588,18 @@
         <div class="deal-img"><i class="fas fa-laptop"></i></div>
         <div class="deal-body">
           <h3>MacBook Air M2</h3>
-          <p class="muted">Thin, light, and powerful — M2 chip</p>
+          <p class="muted" style="font-size:1rem;">Thin, light, and powerful — M2 chip</p>
           <div class="timer" id="dealTimer">
             <div class="time-box"><span id="dealDays">0</span> Days</div>
             <div class="time-box"><span id="dealHours">00</span> Hrs</div>
             <div class="time-box"><span id="dealMinutes">00</span> Min</div>
             <div class="time-box"><span id="dealSeconds">00</span> Sec</div>
           </div>
-          <div class="flex" style="gap:14px; flex-wrap:wrap;">
+          <div class="flex" style="gap:16px; flex-wrap:wrap; margin-top:6px;">
             <div><span class="price-current">$999</span> <span class="price-old">$1,199</span></div>
-            <span style="background:#d32f2f; color:white; padding:4px 14px; border-radius:40px; font-weight:600;">-17%</span>
+            <span style="background:#cc3344; color:white; padding:4px 18px; border-radius:40px; font-weight:700;">-17%</span>
           </div>
-          <p style="margin:10px 0 0;"><strong>12</strong> items left</p>
+          <p style="margin:14px 0 0;"><strong>12</strong> items left at this price</p>
           <button class="btn btn-primary" id="buyDeal" style="margin-top:18px;"><i class="fas fa-bolt"></i> Buy Now</button>
         </div>
       </div>
@@ -582,18 +612,18 @@
       <div class="testimonials-scroll" id="testimonials">
         <div class="testimonial">
           <div class="rating">★★★★★</div>
-          <p>"Fast shipping, excellent support. Exceeded expectations!"</p>
-          <div class="flex" style="gap:12px; margin-top:10px;">
-            <div style="background:#b3d4fc; width:40px; height:40px; border-radius:40px; display:grid; place-items:center; font-weight:700;">AM</div>
-            <div><strong>Ava Martin</strong><div class="muted" style="font-size:0.8rem;">Verified</div></div>
+          <p style="margin:6px 0 12px;">"Fast shipping, excellent support. Exceeded expectations!"</p>
+          <div class="flex" style="gap:12px;">
+            <div style="background:#b3d4fc; width:44px; height:44px; border-radius:40px; display:grid; place-items:center; font-weight:700;">AM</div>
+            <div><strong>Ava Martin</strong><div class="muted" style="font-size:0.85rem;">Verified buyer</div></div>
           </div>
         </div>
         <div class="testimonial">
           <div class="rating">★★★★☆</div>
-          <p>"Great selection, checkout was seamless. Will shop again."</p>
-          <div class="flex" style="gap:12px; margin-top:10px;">
-            <div style="background:#b3d4fc; width:40px; height:40px; border-radius:40px; display:grid; place-items:center; font-weight:700;">ML</div>
-            <div><strong>Michael Lee</strong><div class="muted" style="font-size:0.8rem;">Frequent buyer</div></div>
+          <p style="margin:6px 0 12px;">"Great selection, checkout was seamless. Will shop again."</p>
+          <div class="flex" style="gap:12px;">
+            <div style="background:#b3d4fc; width:44px; height:44px; border-radius:40px; display:grid; place-items:center; font-weight:700;">ML</div>
+            <div><strong>Michael Lee</strong><div class="muted" style="font-size:0.85rem;">Frequent buyer</div></div>
           </div>
         </div>
       </div>
@@ -602,34 +632,34 @@
     <!-- NEWSLETTER -->
     <section class="section container">
       <div class="newsletter-box">
-        <h3 style="font-family:'Poppins',sans-serif;">Stay in the loop</h3>
-        <p style="opacity:0.9;">Exclusive offers &amp; new arrivals</p>
-        <form id="newsletterForm" style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:12px;">
-          <input type="email" id="newsletterEmail" placeholder="Your email" required aria-label="Email" />
+        <h3 style="font-family:'Poppins',sans-serif; font-size:1.8rem;">Stay in the loop</h3>
+        <p style="opacity:0.9; font-size:1.1rem;">Exclusive offers &amp; new arrivals</p>
+        <form id="newsletterForm" style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:16px;">
+          <input type="email" id="newsletterEmail" placeholder="Your email address" required aria-label="Email" />
           <button class="btn btn-primary" id="subscribeBtn">Subscribe</button>
         </form>
-        <div id="newsletterMsg" style="margin-top:10px; display:none;"></div>
+        <div id="newsletterMsg" style="margin-top:14px; display:none; font-weight:500;"></div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px;">
       <div>
-        <div style="font-weight:700; font-size:1.3rem;">NexusShop</div>
-        <p class="muted" style="max-width:260px; margin-top:6px;">Modern e‑commerce demo built with care.</p>
-        <div style="display:flex; gap:12px; margin-top:10px;">
+        <div style="font-weight:700; font-size:1.5rem;">NexusShop</div>
+        <p class="muted" style="max-width:280px; margin-top:6px;">Modern e‑commerce demo built with clarity &amp; care.</p>
+        <div style="display:flex; gap:16px; margin-top:12px; font-size:1.3rem;">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
           <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      <div style="display:flex; gap:40px; flex-wrap:wrap;">
-        <div><strong>Company</strong><div class="muted" style="line-height:1.8;">About<br/>Careers<br/>Press</div></div>
-        <div><strong>Support</strong><div class="muted" style="line-height:1.8;">Help Center<br/>Shipping<br/>Contact</div></div>
+      <div style="display:flex; gap:48px; flex-wrap:wrap;">
+        <div><strong>Company</strong><div class="muted" style="line-height:1.9;">About<br/>Careers<br/>Press</div></div>
+        <div><strong>Support</strong><div class="muted" style="line-height:1.9;">Help Center<br/>Shipping<br/>Contact</div></div>
       </div>
     </div>
-    <div style="text-align:center; margin-top:18px; color:var(--muted); font-size:0.85rem;">&copy; <span id="year"></span> NexusShop. All rights reserved.</div>
+    <div style="text-align:center; margin-top:24px; color:var(--muted); font-size:0.9rem;">&copy; <span id="year"></span> NexusShop. All rights reserved.</div>
   </footer>
 
   <script>
@@ -682,7 +712,7 @@
         list.forEach(p => {
           const el = document.createElement('article');
           el.className = 'product';
-          const badgeHtml = p.badge ? `<span style="background:${p.badge.startsWith('-')?'#d32f2f':'#2e7d32'};color:white;padding:4px 12px;border-radius:40px;font-weight:600;font-size:0.7rem;position:absolute;margin:12px;">${p.badge}</span>` : '';
+          const badgeHtml = p.badge ? `<span style="background:${p.badge.startsWith('-')?'#cc3344':'#2e7d32'};color:white;padding:4px 14px;border-radius:40px;font-weight:700;font-size:0.75rem;position:absolute;margin:14px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">${p.badge}</span>` : '';
           el.innerHTML = `
             <div style="position:relative;">${badgeHtml}<img src="${p.img}" alt="${p.title}" loading="lazy"></div>
             <div class="product-body">
@@ -690,7 +720,7 @@
               <div class="product-category">${p.category}</div>
               <div class="price-row">
                 <div><span class="price-current">$${p.price.toLocaleString()}</span>${p.oldPrice ? `<span class="price-old">$${p.oldPrice.toLocaleString()}</span>` : ''}</div>
-                <div class="rating">${'★'.repeat(Math.round(p.rating))} <span style="font-size:0.7rem;color:var(--muted)">(${p.reviews})</span></div>
+                <div class="rating">${'★'.repeat(Math.round(p.rating))} <span style="font-size:0.75rem;color:var(--muted);">(${p.reviews})</span></div>
               </div>
             </div>
             <div class="product-footer">
@@ -700,7 +730,6 @@
           `;
           productsGrid.appendChild(el);
         });
-        // attach add events
         productsGrid.querySelectorAll('.add-btn').forEach(btn => {
           btn.addEventListener('click', (e) => {
             const id = Number(btn.dataset.id);
@@ -765,15 +794,15 @@
         const msg = document.getElementById('newsletterMsg');
         if (!email || !email.includes('@')) {
           msg.style.display = 'block';
-          msg.textContent = 'Please enter a valid email.';
+          msg.textContent = '⚠️ Please enter a valid email.';
           msg.style.color = '#ffb3b3';
           return;
         }
         msg.style.display = 'block';
-        msg.textContent = '✅ Subscribed!';
-        msg.style.color = '#cce7ff';
+        msg.textContent = '✅ Subscribed successfully!';
+        msg.style.color = '#b3e0ff';
         document.getElementById('newsletterEmail').value = '';
-        setTimeout(() => msg.style.display = 'none', 2800);
+        setTimeout(() => msg.style.display = 'none', 3000);
       });
 
       // Init
@@ -784,3 +813,4 @@
   </script>
 </body>
 </html>
+```
