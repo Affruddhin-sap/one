@@ -1,5 +1,3 @@
-This is a modern, user-friendly e-commerce HTML page I've created for the "NexusShop" brand. It features a clean layout, a sticky header with a search bar, and interactive elements like product listings, a shopping cart counter, and a deal timer.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -786,4 +784,3 @@ This is a modern, user-friendly e-commerce HTML page I've created for the "Nexus
   </script>
 </body>
 </html>
-`````
